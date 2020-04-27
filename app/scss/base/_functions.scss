@@ -1,0 +1,16 @@
+// динамически изменяемый цвет текста
+@function set-text-color($bg-color) {
+  @if(lightness($bg-color) > 40) {
+    @return #292929;
+  }
+
+  @else {
+    @return #ffffff;
+  }
+}
+
+// автовычисление ремов из пикселей
+// $fontsize - береться из _vars.scss
+@function rem($px) {
+  @return ($px/$fontsize)+rem;
+}

@@ -1,0 +1,45 @@
+// DEFAULT DOCUMENT STYLES
+html {
+  box-sizing: border-box;
+  font-size: $fontsize+px; // $fontsize - береться из _vars.scss
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+input,
+textarea {
+  outline: none;
+
+  &:focus:required:invalid {
+    border-color: red
+  }
+
+  &:required:valid {
+    border-color: green
+  }
+}
+
+::placeholder {
+  color: #666;
+}
+
+::selection {
+  background-color: $primary-accent;
+  color: #fff;
+}
+
+body {
+  font-family: $roboto;
+  font-size: inherit;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.65;
+  overflow-x: hidden;
+  background-color: $primary-bgcolor;
+  color: set-text-color($primary-bgcolor);
+  //color: $main-font-color;
+}

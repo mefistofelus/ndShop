@@ -1,0 +1,125 @@
+/*==========  BREAKPOINTS MIXINS  ==========*/
+/*==========  Desktop First  ==========*/
+
+@mixin _1200 {
+  @media all and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin _1170 {
+  @media all and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin _1024 {
+  @media all and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin _992 {
+  @media all and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin _768 {
+  @media all and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin _600 {
+  @media all and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin _576 {
+  @media all and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin _480 {
+  @media all and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin _360 {
+  @media all and (max-width: 360px) {
+    @content;
+  }
+}
+
+@mixin _320 {
+  @media all and (max-width: 320px) {
+    @content;
+  }
+}
+
+
+/*==========  Mobile First  ==========*/
+
+@mixin _mw1200 {
+  @media all and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin _mw1170 {
+  @media all and (min-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin _mw1024 {
+  @media all and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin _mw992 {
+  @media all and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin _mw768 {
+  @media all and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin _mw600 {
+  @media all and (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin _mw576 {
+  @media all and (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin _mw480 {
+  @media all and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin _mw360 {
+  @media all and (min-width: 360px) {
+    @content;
+  }
+}
+
+@mixin _mw320 {
+  @media all and (min-width: 320px) {
+    @content;
+  }
+}
