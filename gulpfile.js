@@ -62,6 +62,11 @@ const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
 const gcmq = require('gulp-group-css-media-queries');
 const imagemin = require('gulp-imagemin');
+const webp = require('gulp-webp');
+const webphtml = require('gulp-webp-html');
+const ttf2woff = require('gulp-ttf2woff');
+const ttf2woff2 = require('gulp-ttf2woff2');
+const fonter = require('gulp-fonter');
 const newer = require('gulp-newer');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
@@ -118,10 +123,22 @@ function styles() {
 }
 
 function images() {
-	return src(paths.images.src)
-		.pipe(newer(paths.images.dest))
-		.pipe(imagemin())
-		.pipe(dest(paths.images.dest))
+	return src(path.images.src)
+		.pipe(webp({
+			quality: 70
+		}))
+		.pipe(dest(path.images.dest))
+		.pipe(src(path.images.src))
+		.pipe(imagemin({
+			progressive: true,
+			svgoPlugins: [{ removeViewBox: false }],
+			interlaced: true,
+			optimizationLevel: 3 // from 0 to 7
+		}))
+		//копирование html-файлов в папку продакшена
+		.pipe(dest(path.images.dest))
+		//перезагрузка браузера
+		.pipe(browsersync.stream())
 }
 
 function cleanimg() {
